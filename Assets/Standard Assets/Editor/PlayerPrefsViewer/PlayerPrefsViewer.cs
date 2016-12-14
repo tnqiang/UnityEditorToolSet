@@ -26,8 +26,18 @@ public class PlayerPrefsViewer : EditorWindow
     float floatValue;
     string strValue;
 
+    void RememberLastInput(string key)
+    {
+        PlayerPrefs.SetString("PlayerPrefsViewer_Last_Input", key);
+    }
+
     void OnGUI()
     {
+        if (string.IsNullOrEmpty(keyStr))
+        {
+            keyStr = PlayerPrefs.GetString("PlayerPrefsViewer_Last_Input");
+        }
+
         keyStr = EditorGUILayout.TextField("Key", keyStr);
         type = (PlayerPrefsValueType)EditorGUILayout.EnumPopup("Value Type", type);
         if (PlayerPrefs.HasKey(keyStr))
@@ -39,10 +49,12 @@ public class PlayerPrefsViewer : EditorWindow
                     if (GUILayout.Button("Get"))
                     {
                         intValue = PlayerPrefs.GetInt(keyStr);
+                        RememberLastInput(keyStr);
                     }
                     if (GUILayout.Button("Set"))
                     {
                         PlayerPrefs.SetInt(keyStr, intValue);
+                        RememberLastInput(keyStr);
                     }
                     break;
                 case PlayerPrefsValueType.FLOAT:
@@ -50,10 +62,12 @@ public class PlayerPrefsViewer : EditorWindow
                     if (GUILayout.Button("Get"))
                     {
                         floatValue = PlayerPrefs.GetFloat(keyStr);
+                        RememberLastInput(keyStr);
                     }
                     if (GUILayout.Button("Set"))
                     {
                         PlayerPrefs.SetFloat(keyStr, floatValue);
+                        RememberLastInput(keyStr);
                     }
                     break;
                 case PlayerPrefsValueType.STRING:
@@ -61,16 +75,19 @@ public class PlayerPrefsViewer : EditorWindow
                     if (GUILayout.Button("Get"))
                     {
                         strValue = PlayerPrefs.GetString(keyStr);
+                        RememberLastInput(keyStr);
                     }
                     if (GUILayout.Button("Set"))
                     {
                         PlayerPrefs.SetString(keyStr, strValue);
+                        RememberLastInput(keyStr);
                     }
                     break;
             }
             if (GUILayout.Button("Delete"))
             {
                 PlayerPrefs.DeleteKey(keyStr);
+                RememberLastInput(keyStr);
             }
         }
         else
@@ -82,6 +99,7 @@ public class PlayerPrefsViewer : EditorWindow
                     if (GUILayout.Button("Add & Set"))
                     {
                         PlayerPrefs.SetInt(keyStr, intValue);
+                        RememberLastInput(keyStr);
                     }
                     break;
                 case PlayerPrefsValueType.FLOAT:
@@ -89,6 +107,7 @@ public class PlayerPrefsViewer : EditorWindow
                     if (GUILayout.Button("Add & Set"))
                     {
                         PlayerPrefs.SetFloat(keyStr, floatValue);
+                        RememberLastInput(keyStr);
                     }
                     break;
                 case PlayerPrefsValueType.STRING:
@@ -96,6 +115,7 @@ public class PlayerPrefsViewer : EditorWindow
                     if (GUILayout.Button("Add & Set"))
                     {
                         PlayerPrefs.SetString(keyStr, strValue);
+                        RememberLastInput(keyStr);
                     }
                     break;
             }
