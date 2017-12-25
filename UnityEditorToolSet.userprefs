@@ -1,0 +1,12 @@
+﻿<Properties StartupItem="Assembly-CSharp-Editor-firstpass.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Standard Assets/Editor/PlayerPrefsViewer/PlayerPrefsViewer.cs">
+    <Files>
+      <File FileName="Assets/Standard Assets/Editor/PlayerPrefsViewer/PlayerPrefsViewer.cs" Line="42" Column="84" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

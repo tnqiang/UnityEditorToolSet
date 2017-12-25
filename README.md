@@ -19,3 +19,8 @@ You can create ScriptableObject via GUI instead of writing you own eidtor code.
 You can copy asset(s)'s path in project view or hierarchy path in hierarchy view easily from context menu item;
 
 [link](https://github.com/tnqiang/UnityEditorToolSet/blob/master/Assets/Standard%20Assets/Editor/AssetPathUtil/AssetPathUtil.cs)
+
+## GUIDTool
+You can get one asset's GUID from menu item and ping a Object with the specified GUID.
+
+[link](https://github.com/tnqiang/UnityEditorToolSet/blob/master/Assets/Standard%20Assets/Editor/GUIDTool/GUIDTool.cs)
